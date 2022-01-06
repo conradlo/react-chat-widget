@@ -3,7 +3,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
@@ -105,7 +105,7 @@ module.exports = {
         cache: true,
         parallel: true
       }),
-      new OptimizeCSSAssetsPlugin({})
+      new CssMinimizerPlugin({}),
     ]
   }
 };
